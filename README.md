@@ -1,6 +1,13 @@
 # 3d packing environment
-
 This repo will contain a 3-d packing environment, prepared for a [4thBrain](https://www.fourthbrain.ai/) Reinforcement Learning capstone project. The repo is organized into three different parts.
+
+## Basic info
+### Project Name: 3d packing environment
+### Group members:
+- Luis García Ramos
+- Przemyslaw Sekula
+
+
 ### Documentation
 Documentation containes a description of state action space and (in future) rewards. Located in `doc/` folder. This desription replaces the EDA from the assignment. 
 
