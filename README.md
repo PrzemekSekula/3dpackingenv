@@ -22,14 +22,14 @@ A [OpenAI Gym](https://openaigygygym.org/) based wrapper of the environment. Not
 
 ## TO DO 
 - Document the environement
-    - Document the expected state-action space (done)
-    - Maintain the documentation during environment implementation (not started yet)
+    - Document the expected state-action space (Done)
+    - Maintain the documentation during environment implementation (ongoing activity)
 - Build Unity Environment
     - Install Unity Hub (Done)
     - Go through the Coursera Guided unity project (onging activity)
-    - Install Unity ML-Agents (not done)
-    - Go through Unity ML-Agents documentation ongoing activity)
-    - Build an initial version of environment (not started yet)
+    - ~~Install Unity ML-Agents~~ (Abandoned)
+    - ~~Go through Unity ML-Agents documentation~~ (Abandoned)
+    - Build an initial version of environment (ongoing activity)
     - Iteratively improve the environment (not started yet)
 - Build an OpenAI Gym environment wrapper
     - Install OpenAI Gym (done)
