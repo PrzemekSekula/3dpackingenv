@@ -16,7 +16,17 @@ public class BoxManager : MonoBehaviour
 
     void Update()
     {
- 
+
+    }
+
+    public void PrepareTeleport()
+    {
+        for (int i = 0; i < boxList.Length; i++) 
+        {
+            boxList[i].isTeleporting = false;
+            Destroy(boxList[i].gameObject.GetComponent<Rigidbody>());
+        }
+
     }
 
 

@@ -6,15 +6,18 @@ using UnityEngine;
 public class BoxController : MonoBehaviour
 {
     
-    //public BoxManager boxManager = null;
+    public BoxManager boxManager = null;
 
     public int boxId { get; private set; }
     private Vector3 oldPosition;
     private Vector3 currentPosition;
 
+    public Rigidbody rb;
+    public bool isTeleporting = false;
+
     void Awake()
     {
-        //boxManager = (BoxManager) GameObject.FindObjectOfType (typeof(BoxManager));
+        boxManager = (BoxManager) GameObject.FindObjectOfType (typeof(BoxManager));
         currentPosition = gameObject.transform.position; 
     }
 
@@ -45,35 +48,27 @@ public class BoxController : MonoBehaviour
 
     public void Teleport(float x, float y, float z)
     {
-        Debug.Log("Teleporting " + gameObject.name);
+        boxManager.PrepareTeleport();
+    
+        isTeleporting = true;
+        gameObject.AddComponent<Rigidbody>();
+        
         oldPosition = gameObject.transform.position; 
         currentPosition = new Vector3(x, y, z);
 
         gameObject.transform.position = currentPosition;  
     }  
 
-    public void StayAtCurrentPosition()
-    {
-        gameObject.transform.position = currentPosition;  
-    }
-
     void OnTriggerEnter(Collider col)
     {
-        /*
-        Debug.Log("On Trigger Enter " + col.gameObject.name + " Old position: " + oldPosition);
-        if (boxManager.currentBox.gameObject.name == gameObject.name)
+        if (isTeleporting)
         {
-            gameObject.transform.position = oldPosition; 
-            //BoxController newBox = (BoxController) col.g;
-            col.gameObject.StayAtCurrentPosition();
-            
-            //Debug.Log("CurrentObject" + col.gameObject.name + " Old position: " + oldPosition);
-        }
-        gameObject.transform.position = oldPosition; 
-        //Rigidbody rb = GetComponent<Rigidbody>();
-        //rb.velocity = Vector3.zero;
-        //rb.angularVelocity = Vector3.zero;
-        */
+            Debug.Log("I (" + gameObject.name + ") " +
+            "collided with " + col.gameObject.name + ". Moving back.");
+            Destroy(gameObject.GetComponent<Rigidbody>());
+            isTeleporting = false;
+            gameObject.transform.position = oldPosition;
+        } 
     } 
 }
 

@@ -20,21 +20,10 @@ A [OpenAI Gym](https://openaigygygym.org/) based wrapper of the environment. Not
 - `render()` - renders an action
 - `close()` - closes any open resources that were used by the environment
 
-## TO DO 
-- Document the environement
-    - Document the expected state-action space (Done)
-    - Maintain the documentation during environment implementation (ongoing activity)
-- Build Unity Environment
-    - Install Unity Hub (Done)
-    - Go through the Coursera Guided unity project (onging activity)
-    - ~~Install Unity ML-Agents~~ (Abandoned)
-    - ~~Go through Unity ML-Agents documentation~~ (Abandoned)
-    - Build an initial version of environment (ongoing activity)
-    - Iteratively improve the environment (not started yet)
-- Build an OpenAI Gym environment wrapper
-    - Install OpenAI Gym (done)
-    - Go through the OpenAI Gym documentation (done)
-    - Build your first, test environment (done, I did not render the environment though)
-    - Run an RL algorithm on the test environment (done)
-    - Wrap the Unity environment (not started yet)
+## Progress (8/19/2022)
+- Collision between boxes added
+- New boxes added
+- Container added
+- Python <-> Unity interface can operate on many boxes without trouble now.
 
+![plot](img/EnvironmentView.jpg "3d Packing Environment View")
